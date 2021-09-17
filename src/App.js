@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import '@tomtom-international/web-sdk-maps/dist/maps.css'
 import "./App.css";
 import * as tt from '@tomtom-international/web-sdk-maps'
 
@@ -23,6 +24,10 @@ useEffect(()=> {
 setMap(map);
 
 const addMaker = () => {
+  const popupOffset = {
+    bottom: [0, -25]
+  }
+  const popup = new tt.Popup({ offset: popupOffset }).setHTML('This is you !')
   const element = document.createElement('div')
   element.className = 'marker'
 
@@ -34,6 +39,12 @@ const addMaker = () => {
 .setLngLat([longitude, latitude])
 .addTo(map)
 
+marker.on('dragend', () => {
+const lngLat = marker.getLngLat()
+setLongitude(lngLat.lng)
+setLatitude(lngLat.lat)
+})
+marker.setPopup(popup).togglePopup()
 }
 
 addMaker()
