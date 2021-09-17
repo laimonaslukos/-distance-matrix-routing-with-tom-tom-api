@@ -3,7 +3,7 @@
 
 
 
-[App egzample](https://distance-matrix-routing-tom-api.netlify.app/)
+[App egzample - push and Go!](https://distance-matrix-routing-tom-api.netlify.app/)
 
 
 ![Screenshot 2021-09-17 at 15-09-46 React App](https://user-images.githubusercontent.com/79200136/133780737-4dc79e7e-8ed0-4472-a5f8-8808ff4fc771.png)
